@@ -8,7 +8,7 @@ fn main() {
     println!("To close the game type: exit");
     println!("-------------------------------------------------------------------------------");
 
-    let _stdout = StandardStream::stdout(ColorChoice::Always);
+    let mut stdout = StandardStream::stdout(ColorChoice::Always);
 
     let mut error_text = ColorSpec::new();
     error_text.set_fg(Some(Color::Red));
@@ -24,7 +24,6 @@ fn main() {
 
     let mut score: u8 = 0;
     let questions = &questions::QUESTIONS;
-    let mut stdout = StandardStream::stdout(ColorChoice::Always);
 
     loop {
         let mut rng = rand::thread_rng();
